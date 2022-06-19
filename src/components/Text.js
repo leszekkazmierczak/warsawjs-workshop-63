@@ -1,23 +1,21 @@
 import { useState } from "react";
+import '../Custom.css';
 
-const Text = ({ text = "Counter" }) => {
+const Text = ({ text = "Counter",  defaultParameter = 0}) => {
 
-    const [counter, setCounter] = useState(0);
+    const [counter, setCounter] = useState(defaultParameter);
 
-    const onIncrement = () => {
-        setCounter(counter + 1);
-    }
-
-    const onDecrement = () => {
-        setCounter(counter - 1);
+    const onChange = (increment) => {
+        setCounter(counter + increment);
     }
 
     return (
         <div>
             <p>{text}</p>
             <h2>{counter}</h2>
-            <button onClick={onIncrement}>+</button>
-            <button onClick={onDecrement}>-</button>
+            <button onClick={() => onChange(1)}>+</button>
+            <button onClick={() => onChange(-1)}>-</button>
+            <button onClick={() => onChange(5)}> +5</button>
         </div>
     )
 }

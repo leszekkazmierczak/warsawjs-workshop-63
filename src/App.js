@@ -7,10 +7,10 @@ function App() {
     <div className="App">
       <header className="App-header">
 
+        <Text defaultParameter={2} />
 
-        <Text />
+        <Text defaultParameter={25} />
 
-        
       </header>
     </div>
   );
