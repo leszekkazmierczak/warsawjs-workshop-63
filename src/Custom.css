@@ -6,6 +6,17 @@ button {
     border: none;
     margin: 2px;
     border-radius: 5px;
-    width: 75px;
-    height: 75px;
+}
+
+input {
+    padding: 1em;
+    font-size:18px;
+}
+
+.memeText {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    z-index: 1;
+    font-weight: bold;
+    font-size: 1.8em;
+    text-transform: uppercase;
 }
