@@ -7,6 +7,7 @@ function App() {
   const [preview, setPreview] = useState();
   const [text1, setText1] = useState("Top text");
   const [text2, setText2] = useState("Bottom text");
+  const [color, setColor] = useState("white");
 
   const onFileInputChange = (event) => {
     setFile(event.target.files[0]);
@@ -28,7 +29,12 @@ function App() {
     <div className="App">
       <header className="App-header">
         {preview ? (
-          <Capture img={preview} textTop={text1} textBottom={text2} />
+          <Capture
+            img={preview}
+            textTop={text1}
+            textBottom={text2}
+            color={color}
+          />
         ) : (
           <h2>Please, import an image first</h2>
         )}
@@ -43,6 +49,11 @@ function App() {
           type={"text2"}
           placeholder="Input bottom text"
           onChange={({ target }) => setText2(target.value)}
+        />
+
+        <input
+          type={"color"}
+          onChange={({ target }) => setColor(target.value)}
         />
       </header>
     </div>

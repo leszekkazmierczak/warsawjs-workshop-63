@@ -21,7 +21,7 @@ const downloadImage = (blob, fileName) => {
   fakeLink.remove();
 };
 
-const Capture = ({ img, textTop, textBottom }) => {
+const Capture = ({ img, textTop, textBottom, color }) => {
   const ref = useRef(null);
 
   return (
@@ -34,15 +34,19 @@ const Capture = ({ img, textTop, textBottom }) => {
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
           position: "relative",
-          width: 400,
-          height: 600,
+          width: 500,
+          height: 800,
           display: "flex",
           justifyContent: "space-between",
           flexDirection: "column",
         }}
       >
-        <p className="memeText">{textTop}</p>
-        <p className="memeText">{textBottom}</p>
+        <p className="memeText memeTextTop" style={{ color: color }}>
+          {textTop}
+        </p>
+        <p className="memeText memeTextBottom" style={{ color: color }}>
+          {textBottom}
+        </p>
       </div>
       <button onClick={() => exportAsImage(ref.current, "test")}>
         Download
