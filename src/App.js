@@ -5,19 +5,11 @@ import Capture from "./components/Capture";
 function App() {
   const [file, setFile] = useState();
   const [preview, setPreview] = useState();
-  const [text1, setText1] = useState("Text1");
-  const [text2, setText2] = useState("Text2");
+  const [text1, setText1] = useState("Top text");
+  const [text2, setText2] = useState("Bottom text");
 
   const onFileInputChange = (event) => {
     setFile(event.target.files[0]);
-  };
-
-  const onTextTopInputChange = (event) => {
-    setText1(event.target.value);
-  };
-
-  const onTextBottomInputChange = (event) => {
-    setText2(event.target.value);
   };
 
   useEffect(() => {
@@ -38,19 +30,19 @@ function App() {
         {preview ? (
           <Capture img={preview} textTop={text1} textBottom={text2} />
         ) : (
-          <h2>Import an image first</h2>
+          <h2>Please, import an image first</h2>
         )}
         <input type={"file"} onChange={onFileInputChange} />
 
         <input
           type={"text1"}
           placeholder="Input top text"
-          onChange={onTextTopInputChange}
+          onChange={({ target }) => setText1(target.value)}
         />
         <input
           type={"text2"}
           placeholder="Input bottom text"
-          onChange={onTextBottomInputChange}
+          onChange={({ target }) => setText2(target.value)}
         />
       </header>
     </div>

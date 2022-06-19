@@ -11,12 +11,13 @@ button {
 input {
     padding: 1em;
     font-size:18px;
+    min-width: 400px;
 }
 
 .memeText {
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     z-index: 1;
     font-weight: bold;
-    font-size: 1.8em;
+    font-size: 36px;
     text-transform: uppercase;
 }
